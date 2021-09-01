@@ -1,24 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import { Header } from './component/Header';
+import { SearchImage } from './component/SearchImage';
+import { useState } from 'react';
+import { RandomImageGallery } from './component/Random';
+
+
 
 function App() {
+ 
+  const [query,setQuery] = useState();
+  
+  
+  function handleChange(e){
+     setQuery(e);
+     console.log("iam at app",e);
+  }
+  
+ 
+  console.log(query);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="Container">
+        <Header handleChange={handleChange}/>
+        {query ? <SearchImage query={query}/>: <RandomImageGallery/>}
     </div>
+       
   );
 }
 
