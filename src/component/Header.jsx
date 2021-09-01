@@ -80,7 +80,7 @@ const Header = ({handleChange})=>{
       style={{ backgroundColor: "white" ,width: '50vw', padding: '2px 2px 2px 2px'  ,borderRadius: '5px'}}
       freeSolo
       renderInput={(params) => (
-        <TextField {...params} label="Search Images" variant="outlined" />
+        <TextField {...params} label="Search Photos" variant="outlined" />
       )}
     />
    
